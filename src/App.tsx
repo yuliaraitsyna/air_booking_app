@@ -6,10 +6,12 @@ import AuthProvider from "./context/AuthContext";
 import Tickets from "./pages/Tickets";
 import Auth from "./pages/Auth";
 
+const baseUrl = process.env.VITE_PUBLIC_URL || '/';
+
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename={baseUrl}>
         <Navigation></Navigation>
         <Routes>
           <Route path="/" element={<Home />} />
